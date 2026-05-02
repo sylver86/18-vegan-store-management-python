@@ -1,118 +1,138 @@
-# VeganShop — Gestionale CLI per Negozio Vegano in Python
+# 🥬 VeganShop: Operational Control & Inventory Intelligence Engine
 
-![Python](https://img.shields.io/badge/Python-3.8+-3776AB?logo=python&logoColor=white)
-![OOP](https://img.shields.io/badge/Design-OOP-blue)
-![JSON](https://img.shields.io/badge/Persistence-JSON-lightgrey)
-![CLI](https://img.shields.io/badge/Interface-CLI-green)
+<p align="center">
+  <img src="https://img.shields.io/badge/Python-3.8+-3776AB?logo=python&logoColor=white" alt="Python" />
+  <img src="https://img.shields.io/badge/Design-OOP-blue" alt="OOP" />
+  <img src="https://img.shields.io/badge/Persistence-JSON-lightgrey" alt="JSON" />
+  <img src="https://img.shields.io/badge/Business--Logic-Profit--Analysis-orange" alt="Business-Logic" />
+  <img src="https://img.shields.io/badge/License-MIT-green.svg" alt="License" />
+</p>
 
-## Panoramica
+**VeganShop** è un sistema di gestione operativa progettato per automatizzare il controllo dell'inventario e l'analisi finanziaria di un esercizio commerciale. Il progetto implementa una logica di business complessa in Python, integrando funzionalità di tracciamento dello stock, registrazione delle vendite in tempo reale e calcolo automatico della marginalità (lorda e netta), fornendo una visione chiara della salute economica del business attraverso un'interfaccia CLI snella e robusta.
 
-Applicazione CLI per la gestione di un negozio di prodotti vegani: catalogo prodotti, registrazione vendite, controllo scorte e calcolo margini (lordo e netto). Progettata con focus su organizzazione del codice, persistenza dei dati e validazione robusta dell'input — dimostrando solidi principi Python in un contesto CRUD reale.
+## 🏢 Valore Enterprise & Settori di Applicazione
 
-Dimostra competenze applicabili allo sviluppo di tool interni enterprise, script di gestione e qualsiasi applicativo Python che richieda persistenza, validazione e logica di business.
-
-## Valore Enterprise
-
-| Settore / Azienda | Rilevanza |
+| Settore / Ambito | Rilevanza & Benefici |
 |-------------------|-----------|
-| Engineering Informatica | OOP Python, persistenza JSON, logica gestionale |
-| IT Consulting (NTT Data, Accenture) | Python scripting per tool interni enterprise |
-| Retail & E-commerce | Pattern CRUD applicabile a sistemi di inventario |
-| Qualsiasi settore | Architettura CLI riutilizzabile per script di gestione |
-
-## Funzionalità
-
-| Feature | Descrizione |
-|---------|-------------|
-| Registrazione prodotto | Nome, quantità, prezzo acquisto, prezzo vendita |
-| Listino prodotti | Vista completa catalogo con livelli di stock correnti |
-| Registrazione vendita | Log transazione, aggiornamento automatico stock |
-| Validazione stock | Alert se quantità richiesta supera disponibilità |
-| Rifornimento stock | Aggiunta quantità a prodotto esistente senza reinserire prezzi |
-| Profitto lordo | Calcolo ricavo totale vendite |
-| Profitto netto | Ricavo meno costo acquisto della merce venduta |
-| Persistenza dati | Stato salvato in `db.json` tra sessioni |
-| Validazione input | Check numerici con recovery errore su tutti gli input |
-
-## Utilizzo
-
-```bash
-git clone https://github.com/sylver86/18-vegan-store-management-python.git
-cd 18-vegan-store-management-python
-python main.py
-```
-
-**Menu interattivo:**
-```
-=== VEGAN STORE MANAGEMENT ===
-1. Aggiungi prodotto
-2. Lista prodotti
-3. Registra vendita
-4. Profitto lordo
-5. Profitto netto
-0. Esci
-```
-
-## Struttura Repository
-
-```
-18-vegan-store-management-python/
-├── main.py        # Entry point — menu CLI e loop principale
-├── README.md
-```
-
-**Design highlights:**
-- Funzioni con responsabilità singola (gestione prodotti, vendite, reporting)
-- Struttura dati in-memory: dizionari + liste per il catalogo
-- Serializzazione JSON per persistenza cross-sessione
-- Try/except su tutti gli input numerici con messaggi di errore user-friendly
-
-## Stack Tecnologico
-
-`Python 3.8+` · `JSON` · `OOP` · `CLI`
+| **Retail & Inventory Management** | Automazione del carico/scarico merce e monitoraggio proattivo dei livelli di stock per evitare rotture di stock. |
+| **SME Business Intelligence** | Calcolo immediato dei profitti netti sottraendo i costi di acquisizione, facilitando il monitoraggio del ROI per singolo prodotto. |
+| **Warehouse Operations** | Gestione semplificata delle anagrafiche prodotto con persistenza dei dati cross-sessione per piccoli magazzini o depositi. |
+| **POS System Prototyping** | Pattern architetturale ideale per il back-end di sistemi Point-of-Sale (POS) moderni e scalabili. |
 
 ---
 
+## 🎯 Executive Summary & Valore di Business
+VeganShop risolve l'inefficienza della gestione manuale delle scorte, garantendo l'integrità dei dati e la precisione del reporting finanziario.
+
+### 🏛️ 1. Inventory Logic & Stock Enforcement
+* **Automated Stock Deduct:** Ogni vendita registrata aggiorna istantaneamente il database locale, con controlli preventivi che impediscono vendite superiori alla disponibilità fisica (Stock-Out Prevention).
+* **Replenishment Strategy:** Funzionalità di rifornimento intelligente che permette di incrementare le quantità di prodotti esistenti preservando le configurazioni di prezzo originali, riducendo l'attrito operativo.
+
+### ⚙️ 2. Financial Intelligence (Gross vs Net)
+* **Real-Time Profit Calculation:** Il sistema non si limita a sommare i ricavi. Implementa algoritmi che correlano ogni vendita al costo di acquisto storico del prodotto, permettendo il calcolo del profitto netto reale (Marginalità Industriale).
+* **Catalogo Dinamico:** Visualizzazione strutturata del listino che funge da cruscotto operativo per il management, evidenziando prezzi di mercato e livelli di giacenza.
+
+### 🛡️ 3. Software Quality & Data Integrity
+* **JSON Persistence:** Utilizzo del formato JSON per la serializzazione dello stato del negozio, garantendo una persistenza leggera, leggibile dall'uomo e facilmente integrabile con altri sistemi.
+* **Error Recovery:** Implementazione di blocchi `try-except` e validazioni di tipo per gestire input utente anomali, assicurando che il database non venga mai corrotto da inserimenti errati.
+
 ---
 
-# VeganShop — Python CLI Store Management Application 🇬🇧
+## 🏗️ Architettura della Logica di Business
 
-![Python](https://img.shields.io/badge/Python-3.8+-3776AB?logo=python&logoColor=white)
-![JSON](https://img.shields.io/badge/Persistence-JSON-lightgrey)
+```mermaid
+graph TD
+    subgraph "Input Layer"
+        CLI["💻 CLI Menu Interface<br/>(User Commands)"]
+    end
 
-## Overview
+    subgraph "Core Business Logic"
+        INV["📦 Inventory Manager<br/>(CRUD & Stock Control)"]
+        SLS["💰 Sales Engine<br/>(Transaction Logging)"]
+        FIN["📈 Financial Reporter<br/>(Gross/Net Profit)"]
+    end
 
-CLI application for managing a vegan product store: product catalogue, sales recording, stock control, and profit reporting (gross and net). Designed with clean code organisation, data persistence, and robust input validation — demonstrating solid Python fundamentals in a real-world CRUD context.
+    subgraph "Data Persistence"
+        DB[("📄 db.json<br/>(State Persistence)")]
+    end
 
-## Features
+    CLI --> INV & SLS & FIN
+    INV & SLS --> DB
+    DB --> FIN
+    FIN --> CLI
 
-| Feature | Description |
-|---------|-------------|
-| Product registration | Name, quantity, purchase price, sell price |
-| Product listing | Full catalogue with current stock levels |
-| Sales recording | Log transactions, auto-update stock |
-| Stock validation | Alert if quantity requested exceeds available stock |
-| Stock replenishment | Add stock without re-entering prices |
-| Gross profit | Total sales revenue calculation |
-| Net profit | Revenue minus purchase cost of sold goods |
-| Data persistence | State saved to `db.json` between sessions |
-| Input validation | Numeric checks with error recovery on all inputs |
+    style CLI fill:#339af0,color:#fff
+    style FIN fill:#be4bdb,color:#fff
+    style DB fill:#51cf66,color:#fff
+```
 
-## Usage
+## 🛠️ Stack Tecnologico
+
+| Layer | Tecnologia | Ruolo |
+|:------|:-----------|:-----|
+| 🐍 **Language** | Python 3.8+ | Core development |
+| 🏗️ **Architecture** | OOP / Functional | Business Logic Structure |
+| 📂 **Persistence** | JSON (native lib) | Lightweight Document Store |
+| 📊 **Analytics** | Arithmetic Logic | Financial KPI calculation |
+
+## 🚀 Setup & Utilizzo
 
 ```bash
+# Clone
 git clone https://github.com/sylver86/18-vegan-store-management-python.git
 cd 18-vegan-store-management-python
+
+# Esecuzione
 python main.py
 ```
 
-## Design Highlights
+**Funzionalità Chiave:**
+1. **Aggiungi prodotto:** Inserimento nuove referenze (Prezzo acquisto/vendita).
+2. **Lista prodotti:** Report completo dello stock attuale.
+3. **Registra vendita:** Movimentazione merce e log transazione.
+4. **Profitto lordo/netto:** Analisi finanziaria istantanea.
 
-- Single-responsibility functions (product management, sales, reporting)
-- In-memory catalogue with dict + list data structures
-- JSON serialisation for cross-session persistence
-- Try/except on all numeric inputs with user-friendly error messages
+<br><br>
 
-## Technologies
+*Progettato e sviluppato da Eugenio Pasqua.*
+
+---
+
+# 🇬🇧 ENGLISH VERSION
+
+# 🥬 VeganShop: Operational Control & Inventory Intelligence Engine
+
+<p align="center">
+  <img src="https://img.shields.io/badge/Python-3.8+-3776AB?logo=python&logoColor=white" alt="Python" />
+  <img src="https://img.shields.io/badge/Design-OOP-blue" alt="OOP" />
+  <img src="https://img.shields.io/badge/Persistence-JSON-lightgrey" alt="JSON" />
+</p>
+
+**VeganShop** is an operational management system designed to automate inventory control and financial analysis for a retail business. The project implements complex business logic in Python, integrating features for stock tracking, real-time sales recording, and automatic margin calculation (gross and net), providing a clear view of business health through a lean and robust CLI.
+
+## 🏢 Enterprise Value & Application Sectors
+
+| Sector / Domain | Relevance & Benefits |
+|-------------------|-----------|
+| **Retail Management** | Automated stock updates and proactive monitoring to prevent stock-outs. |
+| **SME Business Intelligence** | Instant net profit calculation by subtracting acquisition costs for ROI tracking. |
+| **Warehouse Ops** | Simplified product master data management with cross-session persistence. |
+
+---
+
+## 🏗️ Business Logic Architecture
+
+```mermaid
+graph TD
+    CLI["💻 CLI Interface"] --> INV["📦 Inventory Control"]
+    INV --> DB[("📄 JSON Database")]
+    DB --> FIN["📊 Financial Reporting<br/>(Net Margin Analysis)"]
+```
+
+## 🧰 Technology Stack
 
 `Python 3.8+` · `JSON` · `OOP` · `CLI`
+
+<br><br>
+
+*Designed and developed by Eugenio Pasqua.*
